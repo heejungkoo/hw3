@@ -1,0 +1,25 @@
+<!-- Place details page -->
+
+<h1><%= @place["name"] %></h1>
+
+<ul>
+  <% for entry in @entries %>
+    <li>
+      <h3><%= entry["title"] %></h3>
+      <p><%= entry["occurred_on"] %></p>
+      <p><%= entry["description"]%></p>
+    </li>
+  <% end %>
+</ul>
+
+<p>
+  <a href="/entries/new?place_id=<%= @place["id"] %>">Create a New Record</a>
+</p>
+
+<p>
+  <a href="/places">Back to All Places</a>
+</p>
+
+<form action="/places/<%= @place["id"] %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+</form>
