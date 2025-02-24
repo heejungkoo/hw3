@@ -3,7 +3,6 @@ class EntriesController < ApplicationController
   def index
     # find all Entry rows
     @entries = Entry.all
-
   end
 
   def show
